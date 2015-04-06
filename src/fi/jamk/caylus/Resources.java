@@ -9,6 +9,10 @@ package fi.jamk.caylus;
 public class Resources {
 
     private int money, food, wood, stone, silk, gold, rep, aut;
+    private boolean stonePermit = false;
+    private boolean woodPermit = false;
+    private boolean koasPermit = false;
+    private boolean wonderPermit = false;
 
     public Resources(int money, int food, int wood, int stone, int silk, int gold, int rep, int aut){
         this.money = money;
@@ -69,6 +73,24 @@ public class Resources {
     public void subAut(int i) {
         this.aut = aut - i;
     }
+
+    public void setStonePermit(boolean stonePermit) {
+        this.stonePermit = stonePermit;
+    }
+
+    public void setWoodPermit(boolean woodPermit) {
+        this.woodPermit = woodPermit;
+    }
+
+    public void setKoasPermit(boolean koasPermit) {
+        this.koasPermit = koasPermit;
+    }
+
+    public void setWonderPermit(boolean wonderPermit) {
+        this.wonderPermit = wonderPermit;
+    }
+    
+    
 
     public int getMoney() {
         return money;

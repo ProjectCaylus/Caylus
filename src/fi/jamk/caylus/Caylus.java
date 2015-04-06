@@ -1,5 +1,5 @@
 package fi.jamk.caylus;
-
+import fi.jamk.caylus.buildings.*;
 /* 
 
 MORO REISCA WITTU
@@ -118,11 +118,6 @@ public class Caylus extends Canvas implements Runnable {
     
     public static void main (String args[]){
       new Caylus();
-      
-      DefBuild d = new DefBuild();
-      Player player1 = new Player("Hessu");
-      player1.subGold(d.defGoldMine());
-      player1.playerInfo();
       
     }
 

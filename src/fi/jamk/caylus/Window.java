@@ -28,7 +28,7 @@ public class Window extends Canvas {
     {
       
         frame.add(boardi);
-        boardi.add(panel);
+        boardi.add(panel, new Integer(1));
         frame.add(pan);
         frame.add(d);
         frame.add(panel);
@@ -73,11 +73,11 @@ public class Window extends Canvas {
     }
     
     public void addPanel(int x,int y,int w, int h){
-       JPanel j = new JPanel();
-       boardi.add(j);
-       Spot g = new Spot();
-       j.setBounds(x,y,w,h);
-       j.add(g);
-       g.setIcon(apina);
+       JPanel j = new JPanel(); // uusi paneeli
+       panel.add(j, new Integer(2)); // JLayered panell +j paneeli
+       Spot g = new Spot();  // uusi spotti
+       j.setBounds(x,y,w,h); // j paneelin rajat
+       j.add(g);  // j.lisää(spotti)
+       g.setIcon(apina); // spotille asetetaan kuva
     }
 }
