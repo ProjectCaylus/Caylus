@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package fi.jamk.caylus.buildings;
-
+import fi.jamk.caylus.Resources;
 /**
  *
  * @author Omistaja

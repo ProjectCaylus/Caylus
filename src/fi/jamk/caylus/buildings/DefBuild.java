@@ -10,7 +10,7 @@ import fi.jamk.caylus.Resources;
  *
  * @author Omistaja
  */
-public class DefBuild extends Resources {
+public class DefBuild extends Resources{
     
     public DefBuild(){
         super(0,0,0,0,0,0,0,0);
@@ -23,28 +23,39 @@ public class DefBuild extends Resources {
         return defGoldMine.getGold();
     }
     
-    public int defTrader(){
+     public int defTrader(String trade){
         DefBuild defTrader = new DefBuild();
-        int defTraderOptions = 4;
-        switch(defTraderOptions){
-            
-            case 1: defTrader.subMoney(2);
+       
+        switch(defTrader.toString()){
+           
+            case "food":
+                defTrader.subMoney(2);
                 defTrader.addFood(1);
                 break;
-            
-            case 2: defTrader.subMoney(2);
+           
+            case "wood":
+                defTrader.subMoney(2);
                 defTrader.addWood(1);
                 break;
-                
-            case 3: defTrader.subMoney(2);
+               
+            case "stone":
+                defTrader.subMoney(2);
                 defTrader.addStone(1);
                 break;
-                
-            case 4: defTrader.subMoney(2);
+               
+            case "silk": defTrader.subMoney(2);
                 defTrader.addSilk(1);
                 break;
-                
+               
         }return defTrader.getMoney() + defTrader.getFood() + defTrader.getWood() + defTrader.getStone() + defTrader.getSilk();
+       
+    }
+
+    
+    public int defPermit(){
+        DefBuild defPermit = new DefBuild();
+        defPermit.setDefBuild(true);
         
+        return defPermit.defPermit();
     }
 }
