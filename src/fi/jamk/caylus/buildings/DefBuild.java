@@ -4,17 +4,22 @@
  * and open the template in the editor.
  */
 package fi.jamk.caylus.buildings;
+import fi.jamk.caylus.Resources;
 
 /**
  *
  * @author Omistaja
  */
 public class DefBuild extends Resources {
-
-    public DefBuild(int money, int food, int wood, int stone, int silk, int gold, int rep, int aut) {
-        super(money, food, wood, stone, silk, gold, rep, aut);
+    
+    public DefBuild(){
+        super(0,0,0,0,0,0,0,0);
     }
-
-    DefBuild defGoldMine = new DefBuild(0,0,0,0,0,0,0,0);
-
+   
+    public int defGoldMine(){
+        DefBuild defGoldMine = new DefBuild();
+        defGoldMine.addGold(1);
+       
+        return defGoldMine.getGold();
+    }
 }

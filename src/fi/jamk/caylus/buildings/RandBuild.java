@@ -9,7 +9,7 @@ package fi.jamk.caylus.buildings;
  *
  * @author Omistaja
  */
-public class RandBuild extends Building {
+public class RandBuild extends Resources {
 
    
 }
