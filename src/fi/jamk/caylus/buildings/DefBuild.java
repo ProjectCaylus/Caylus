@@ -28,19 +28,19 @@ public class DefBuild extends Resources {
         int defTraderOptions = 4;
         switch(defTraderOptions){
             
-            case 1: defTrader.addMoney(-2);
+            case 1: defTrader.subMoney(2);
                 defTrader.addFood(1);
                 break;
             
-            case 2: defTrader.addMoney(-2);
+            case 2: defTrader.subMoney(2);
                 defTrader.addWood(1);
                 break;
                 
-            case 3: defTrader.addMoney(-2);
+            case 3: defTrader.subMoney(2);
                 defTrader.addStone(1);
                 break;
                 
-            case 4: defTrader.addMoney(-2);
+            case 4: defTrader.subMoney(2);
                 defTrader.addSilk(1);
                 break;
                 
