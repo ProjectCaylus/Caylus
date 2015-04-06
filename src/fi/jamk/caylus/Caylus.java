@@ -3,7 +3,7 @@ package fi.jamk.caylus;
 /* 
 
 MORO REISCA WITTU
-
+OSMO... OSMO HEI! NO WITTU! WITTUSAATANA
 */
 
 import java.awt.Canvas;
