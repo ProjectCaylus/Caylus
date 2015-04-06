@@ -22,4 +22,29 @@ public class DefBuild extends Resources {
        
         return defGoldMine.getGold();
     }
+    
+    public int defTrader(){
+        DefBuild defTrader = new DefBuild();
+        int defTraderOptions = 4;
+        switch(defTraderOptions){
+            
+            case 1: defTrader.addMoney(-2);
+                defTrader.addFood(1);
+                break;
+            
+            case 2: defTrader.addMoney(-2);
+                defTrader.addWood(1);
+                break;
+                
+            case 3: defTrader.addMoney(-2);
+                defTrader.addStone(1);
+                break;
+                
+            case 4: defTrader.addMoney(-2);
+                defTrader.addSilk(1);
+                break;
+                
+        }return defTrader.getMoney() + defTrader.getFood() + defTrader.getWood() + defTrader.getStone() + defTrader.getSilk();
+        
+    }
 }
