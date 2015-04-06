@@ -13,6 +13,11 @@ public class Resources {
     private boolean woodPermit = false;
     private boolean koasPermit = false;
     private boolean wonderPermit = false;
+<<<<<<< HEAD
+=======
+    private boolean defBuild = false;
+
+>>>>>>> origin/master
 
     public Resources(int money, int food, int wood, int stone, int silk, int gold, int rep, int aut){
         this.money = money;
@@ -123,6 +128,48 @@ public class Resources {
     public int getGold(){
         return gold;
     }
+
+    public boolean isStonePermit() {
+        return stonePermit;
+    }
+
+    public void setStonePermit(boolean stonePermit) {
+        this.stonePermit = stonePermit;
+    }
+
+    public boolean isWoodPermit() {
+        return woodPermit;
+    }
+
+    public void setWoodPermit(boolean woodPermit) {
+        this.woodPermit = woodPermit;
+    }
+
+    public boolean isKoasPermit() {
+        return koasPermit;
+    }
+
+    public void setKoasPermit(boolean koasPermit) {
+        this.koasPermit = koasPermit;
+    }
+
+    public boolean isWonderPermit() {
+        return wonderPermit;
+    }
+
+    public void setWonderPermit(boolean wonderPermit) {
+        this.wonderPermit = wonderPermit;
+    }
+
+    public boolean isDefBuild() {
+        return defBuild;
+    }
+
+    public void setDefBuild(boolean defBuild) {
+        this.defBuild = defBuild;
+    }
+    
+    
     
     public String resourcesInfo(){
         return "Money: " + this.money + "Food: " + this.food + "Wood: " + this.wood + "Stone: " + 
