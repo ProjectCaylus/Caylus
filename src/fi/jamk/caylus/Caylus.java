@@ -29,7 +29,6 @@ public class Caylus extends Canvas implements Runnable {
     
     public Caylus(){
        Window game = new Window(WIDTH, HEIGHT, "Caylus", this);
-       game.addPanel(500,500,500,500);
     }
     
     
