@@ -1,5 +1,5 @@
 package fi.jamk.caylus;
-
+import fi.jamk.caylus.buildings.*;
 /* 
 
 MORO REISCA WITTU
@@ -28,8 +28,10 @@ public class Caylus extends Canvas implements Runnable {
     
     
     public Caylus(){
-       Window game = new Window(WIDTH, HEIGHT, "Caylus", this);
-       game.addPanel(500,500,500,500);
+       //CaylusWindow game = new CaylusWindow();
+       Window game = new Window(this);
+       
+       
     }
     
     
@@ -88,7 +90,6 @@ public class Caylus extends Canvas implements Runnable {
     }
     
     public void tick(){
-        handler.tick();
     }
     
     public void render(){
@@ -108,7 +109,6 @@ public class Caylus extends Canvas implements Runnable {
        g.fillRect(0, 0, getWidth(), getHeight());
        
         // Drawing ends
-        handler.render(g);
         
         g.dispose();
         bs.show();
@@ -119,11 +119,24 @@ public class Caylus extends Canvas implements Runnable {
     public static void main (String args[]){
       new Caylus();
       
-      DefBuild d = new DefBuild();
-      Player player1 = new Player("Hessu");
-      player1.subGold(d.defGoldMine());
-      player1.playerInfo();
-      
     }
+    public static void payment(int[] playerFunds, int[] buildingCost) { // TO-DO: return
+        boolean b = false;
+        
+        for ( int i = 0; i < buildingCost.length; i++) {                // for loop to check all Array positions
+            if(buildingCost[i] != 0){                                   // checks if buildings cost position is something else than 0
+                if(buildingCost[i] > playerFunds[i]) {                      // if so -> Checks if buildingCost array position [i] is > playerFunds position [i] 
+                b = false;                                                  // if Cost > Funds = payment can't be done = returns false
+                }
+            else if(playerFunds[i] == buildingCost[i]) {                    //if Funds = Cost then return = true              
+               b = true;  
+            }else{ b = true;                                                //else (means if playerFunds are in every position higher than the cost) 
+            }                                                               //return will be true.
+            }
+        }
+         System.out.println(b);                                         // !! Returning not implemented yet !!
+                                                                         // TO-DO: return
+
+}
 
 }

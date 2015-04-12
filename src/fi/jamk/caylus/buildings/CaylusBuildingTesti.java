@@ -1,18 +1,36 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Main to try out things in this package.
  */
 package fi.jamk.caylus.buildings;
-
+import fi.jamk.caylus.*;
 /**
  *
- * @author Omistaja
+ * @author Mythe & Omistaja
  */
 public class CaylusBuildingTesti {
     
     public static void main (String args[]){
         
+      Player player1 = new Player("Hessu");
+        
       
+      DefBuild goldmine = new DefBuild();
+      goldmine.reward.addGold(1);
+      DefBuild trader = new DefBuild();
+      trader.trade("food");
+      
+      player1.addAut(7);
+      
+      player1.subGold(5); 
+        
+      System.out.println(player1.getMoney()); // Rahat nyt
+      System.out.println(player1.subMoney(trader.cost.getMoney())); // vähennetään DefBuild "trader" olion sisältämästä "cost" nimisen Resource olion raha muuttujan arvo =/= 2
+        
+      System.out.println(player1.resourcesInfo()); 
+      
+
+      /**
+       * Run File = Shift + F6
+      */
     }
 }
