@@ -13,7 +13,8 @@ public class DefBuild extends Building{
     }
     
     public void defGoldMine(){
-        
+        DefBuild goldmine = new DefBuild();
+      goldmine.reward.addGold(1);
     }
       public Resources trade(String opt){
           this.cost.addMoney(2);

@@ -13,9 +13,9 @@ public class CaylusBuildingTesti {
         
       Player player1 = new Player("Hessu");
         
+
       
-      DefBuild goldmine = new DefBuild();
-      goldmine.reward.addGold(1);
+      
       DefBuild trader = new DefBuild();
       trader.trade("food");
       
@@ -25,6 +25,7 @@ public class CaylusBuildingTesti {
         
       System.out.println(player1.getMoney()); // Rahat nyt
       System.out.println(player1.subMoney(trader.cost.getMoney())); // vähennetään DefBuild "trader" olion sisältämästä "cost" nimisen Resource olion raha muuttujan arvo =/= 2
+        System.out.println(player1);
         
       System.out.println(player1.resourcesInfo()); 
       
