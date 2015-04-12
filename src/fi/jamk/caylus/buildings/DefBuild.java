@@ -51,7 +51,6 @@ public class DefBuild extends Resources{
        
     }
 
-    
     public int defPermit(){
         DefBuild defPermit = new DefBuild();
         defPermit.setDefBuild(true);
