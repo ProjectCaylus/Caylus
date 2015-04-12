@@ -16,15 +16,15 @@ public class CaylusBuildingTesti {
 
       
       
-      DefBuild trader = new DefBuild();
-      trader.trade("food");
+     // DefBuild trader = new DefBuild();
+//      trader.trade("food");
       
       player1.addAut(7);
       
       player1.subGold(5); 
         
       System.out.println(player1.getMoney()); // Rahat nyt
-      System.out.println(player1.subMoney(trader.cost.getMoney())); // vähennetään DefBuild "trader" olion sisältämästä "cost" nimisen Resource olion raha muuttujan arvo =/= 2
+    //  System.out.println(player1.subMoney(trader.cost.getMoney())); // vähennetään DefBuild "trader" olion sisältämästä "cost" nimisen Resource olion raha muuttujan arvo =/= 2
         System.out.println(player1);
         
       System.out.println(player1.resourcesInfo()); 
