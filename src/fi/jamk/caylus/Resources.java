@@ -26,6 +26,13 @@ public class Resources {
         this.aut = aut;
     }
     
+    public int[] getResArray(){
+     int resArray[] = {
+        this.money,this.food,this.wood,this.stone,this.silk,this.gold,this.rep,this.aut
+    };
+     return resArray;
+ }
+    
  public int addMoney(int i){
         this.money = money + i;
         return money;
