@@ -33,9 +33,9 @@ public class Caylus extends Canvas {
        
        game.setSize(1920,1080);
         
-        game.setLocationRelativeTo(null);
-        game.setResizable(false);
-        game.setVisible(true);
+       game.setLocationRelativeTo(null);
+       game.setResizable(false);
+       game.setVisible(true);
     }
     
     
