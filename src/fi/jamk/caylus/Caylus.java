@@ -17,21 +17,25 @@ import java.awt.image.BufferStrategy;
  * @author Mythe 
  */ 
 
-public class Caylus extends Canvas implements Runnable {
-
+public class Caylus extends Canvas {
+  
     public static final int WIDTH = 1920, HEIGHT = 1080;
     
     private boolean running = false;
     private Thread thread;
-    
-    private Handler handler;
-    
-    
+    private Board board;
+     
     public Caylus(){
        //CaylusWindow game = new CaylusWindow();
        Window game = new Window(this);
+       board = new Board();
+       game.add(board);
        
-       
+       game.setSize(1920,1080);
+        
+        game.setLocationRelativeTo(null);
+        game.setResizable(false);
+        game.setVisible(true);
     }
     
     
@@ -40,7 +44,12 @@ public class Caylus extends Canvas implements Runnable {
             return;
         
         running = true;
-        thread = new Thread(this);
+        thread = new Thread() {
+        @Override
+        public void run(){
+        gameLoop();
+    }
+    };
         thread.start();
     }
     
@@ -57,7 +66,13 @@ public class Caylus extends Canvas implements Runnable {
     // Game loop starts here
     // Made so fps is max 60
     
-    public void run(){ 
+    private void gameLoop(){
+        tickFps();
+            
+        }
+    }
+    
+    private void tickFps(){ 
         long lastTime = System.nanoTime();
         final double amountOfTicks = 60.0;
         double ns = 1000000000 / amountOfTicks;
@@ -75,8 +90,10 @@ public class Caylus extends Canvas implements Runnable {
                     updates++;
                     delta--;
                 }
-                render();
+               // render();
                 frames++;
+                
+                
                 
                 if(System.currentTimeMillis() - timer > 1000){
                     timer += 1000;
@@ -117,7 +134,7 @@ public class Caylus extends Canvas implements Runnable {
     }
     
     public static void main (String args[]){
-      new Caylus();
+        Caylus caylus = new Caylus();
       
     }
     public static void payment(int[] playerFunds, int[] buildingCost) { // TO-DO: return

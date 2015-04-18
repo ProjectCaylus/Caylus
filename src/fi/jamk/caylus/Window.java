@@ -19,11 +19,9 @@ import javax.swing.TransferHandler;
 public class Window extends JFrame {
     
  
-      ImageIcon board = new ImageIcon(getClass().getResource("/images/Caylus_board.png"));
-    ImageIcon apina = new ImageIcon(getClass().getResource("/images/apina.jpg"));
-    ImageIcon jeps = new ImageIcon(getClass().getResource("/images/eihuono.jpg"));
-    ImageIcon fill = new ImageIcon(getClass().getResource("/images/fill.png"));
+
     
+    /*
     private void initComponents(){
           
         mainpanel = new JPanel();
@@ -100,7 +98,7 @@ public class Window extends JFrame {
         pack();
         
     }
-    
+    */
     
     public Window(Caylus game)
     {
@@ -109,7 +107,7 @@ public class Window extends JFrame {
         setMaximumSize(new Dimension(WIDTH, HEIGHT));
         setMinimumSize(new Dimension(WIDTH, HEIGHT));
         
-        initComponents();
+        //initComponents();
         setSize(1920,1080);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
