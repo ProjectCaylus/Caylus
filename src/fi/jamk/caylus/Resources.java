@@ -170,6 +170,38 @@ public class Resources {
     public void setKoaspermit(boolean koaspermit) {
         this.koaspermit = koaspermit;
     }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public void setFood(int food) {
+        this.food = food;
+    }
+
+    public void setWood(int wood) {
+        this.wood = wood;
+    }
+
+    public void setStone(int stone) {
+        this.stone = stone;
+    }
+
+    public void setSilk(int silk) {
+        this.silk = silk;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
+    public void setRep(int rep) {
+        this.rep = rep;
+    }
+
+    public void setAut(int aut) {
+        this.aut = aut;
+    }
     
     
     
