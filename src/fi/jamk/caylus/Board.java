@@ -60,15 +60,15 @@ public class Board extends JPanel {
              
        add(bt);
        
-       
-        if(state == GameState.PLAY){
+       /*
+        if(state == GameState){
         
         }else if(state == GameState.MENU) {
             JButton s = new JButton();
             add(s);
             s.setBounds(300,300,300,300);
          }
-    
+    */
 add(bg);
 }
     

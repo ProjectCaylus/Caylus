@@ -24,6 +24,11 @@ public class Resources {
         this.gold = gold;
         this.rep = rep;
         this.aut = aut;
+        
+        this.stonepermit = false;
+        this.woodpermit = false;
+        this.wonderpermit = false;
+        this.koaspermit = false;
     }
     
     public int[] getResArray(){

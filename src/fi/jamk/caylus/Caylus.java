@@ -69,7 +69,7 @@ public class Caylus extends Canvas {
     private void gameLoop(){
         tickFps();
             
-        }
+        
     }
     
     private void tickFps(){ 
