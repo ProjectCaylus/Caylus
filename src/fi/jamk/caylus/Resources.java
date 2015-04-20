@@ -31,7 +31,7 @@ public class Resources {
         this.koaspermit = false;
     }
     
-    public int[] getResArray(){
+    public int[] getResArray(){ 
      int resArray[] = {
         this.money,this.food,this.wood,this.stone,this.silk,this.gold,this.rep,this.aut
     };
@@ -135,9 +135,6 @@ public class Resources {
         return gold;
     }
     
-    public String goldInfo(){
-        return "" + this.gold;
-    }
     public String resourcesInfo(){
         return "\n\nMoney: " + this.money + "\nFood: " + this.food + "\nWood: " + this.wood + "\nStone: " + 
                 this.stone + "\nSilk: " + this.silk + "\nGold: " + this.gold + "\nReputation: " + this.rep 
