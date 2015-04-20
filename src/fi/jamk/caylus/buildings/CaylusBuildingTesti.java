@@ -216,6 +216,53 @@ public class CaylusBuildingTesti {
      stonealchemist4.cost.addAut(6);
      stonealchemist4.own.addAut(6);
      
+    Building woodfoodfarm = new Building();
+    woodfoodfarm.cost.addWood(1);
+    woodfoodfarm.cost.addFood(1);
+    woodfoodfarm.own.addAut(2);
+    
+    
+    Building woodsilkfarm = new Building();
+    woodsilkfarm.cost.addFood(1);
+    woodsilkfarm.cost.addWood(1);
+    woodfoodfarm.own.addAut(2);
+    
+    Building woodmarket = new Building();
+    woodmarket.own.addAut(2);
+    
+    Building woodmine = new Building();
+    woodmine.reward.addStone(2);
+    woodmine.cost.addFood(1);
+    woodmine.cost.addWood(1);
+    woodmine.own.addAut(1);
+    
+    Building woodlumber = new Building();
+    woodlumber.reward.addWood(2);
+    woodlumber.cost.addFood(1);
+    woodlumber.cost.addWood(1);
+    woodlumber.own.addAut(2);
+    
+    Building woodtrader = new Building();
+    woodtrader.own.addAut(4);
+    
+    Building deftrader = new Building();
+    
+    Building defgoldmine = new Building();
+    defgoldmine.reward.addGold(1);
+    
+    Building randforest = new Building();
+    
+    Building randmine = new Building();
+    randmine.reward.addStone(1);
+    
+    Building randfarm = new Building();
+    
+    Building randlumber = new Building();
+    randlumber.reward.addWood(1);
+    
+    Building randmarket = new Building();
+    
+    
     
      
         
