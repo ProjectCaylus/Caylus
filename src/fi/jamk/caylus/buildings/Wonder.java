@@ -11,5 +11,5 @@ package fi.jamk.caylus.buildings;
  */
 public class Wonder extends Building {
 
-    
+ 
 }
