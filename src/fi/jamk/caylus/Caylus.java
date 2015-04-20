@@ -19,7 +19,7 @@ import java.awt.image.BufferStrategy;
 
 public class Caylus extends Canvas {
   
-    public static final int WIDTH = 1920, HEIGHT = 1080;
+    public final int WIDTH = 1920, HEIGHT = 1080;
     
     private boolean running = false;
     private Thread thread;
@@ -36,6 +36,7 @@ public class Caylus extends Canvas {
        game.setLocationRelativeTo(null);
        game.setResizable(false);
        game.setVisible(true);
+       
     }
     
     
@@ -68,7 +69,7 @@ public class Caylus extends Canvas {
     
     private void gameLoop(){
         tickFps();
-            
+          
         
     }
     
@@ -92,7 +93,9 @@ public class Caylus extends Canvas {
                 }
                // render();
                 frames++;
-                
+                 board.setPhase(Board.GamePhase.PHASE2);
+           board.repaint();
+           board.revalidate();
                 
                 
                 if(System.currentTimeMillis() - timer > 1000){
@@ -155,5 +158,6 @@ public class Caylus extends Canvas {
                                                                          // TO-DO: return
 
 }
+    
 
 }

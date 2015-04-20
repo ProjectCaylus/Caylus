@@ -3,12 +3,13 @@
  */
 package fi.jamk.caylus.buildings;
 import fi.jamk.caylus.*;
-import fi.jamk.caylus.buildings.WoodBuild;
+import java.awt.List;
 /**
  *
  * @author Mythe & Omistaja
  */
 public class CaylusBuildingTesti {
+    
     
     public static void main(String args[]){
         
@@ -17,7 +18,7 @@ public class CaylusBuildingTesti {
       
       
       DefBuild trader = new DefBuild();
-      trader.trade("food");
+      trader.defTrade("food");
       
       player1.addAut(7);
       
@@ -25,8 +26,8 @@ public class CaylusBuildingTesti {
         
       System.out.println(player1.getMoney()); // Rahat nyt
       System.out.println(player1.subMoney(trader.cost.getMoney())); // vähennetään DefBuild "trader" olion sisältämästä "cost" nimisen Resource olion raha muuttujan arvo =/= 2
-        System.out.println(player1.addFood(trader.reward.getFood()));
-        System.out.println(player1.addSilk(trader.reward.getSilk()));
+      System.out.println(player1.addFood(trader.reward.getFood()));
+      System.out.println(player1.addSilk(trader.reward.getSilk()));
         
       System.out.println(player1.resourcesInfo()); 
       

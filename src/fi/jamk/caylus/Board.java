@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -20,10 +21,26 @@ import javax.swing.JPanel;
 
 public class Board extends JPanel {
     
+    static enum GamePhase {
+        PHASE1, PHASE2, PHASE3
+    }
+    
+    public GamePhase phase;
+    
+    public void setPhase(GamePhase sd) {
+        this.phase = sd;
+    }
+    
+    public GamePhase getPhase(){
+        return phase;
+    }
+    
     ImageIcon board = new ImageIcon(getClass().getResource("/images/Caylus_board.png"));
     ImageIcon apina = new ImageIcon(getClass().getResource("/images/apina.jpg"));
     ImageIcon jeps = new ImageIcon(getClass().getResource("/images/eihuono.jpg"));
     ImageIcon fill = new ImageIcon(getClass().getResource("/images/fill.png"));
+    
+    boolean allow = false;
     
 
     
@@ -54,11 +71,37 @@ public class Board extends JPanel {
                 {
                     //bg.setVisible(false);
                     //bt.setVisible(false);
+                   
                     Maini();
+                    bt.setEnabled(false);
+                }
+            });
+            
+                    JButton bt2 = new JButton("Paina tästä");
+        
+        /*
+                                bt.setIcon(transparent);
+                                bt.setOpaque(false);
+                                bt.setContentAreaFilled(false);
+                                bt.setBorderPainted(false);
+                */
+        bt2.setBounds(400,200,200,200);
+                                
+            bt2.addActionListener(new ActionListener(){
+                @Override
+                public void actionPerformed(ActionEvent e)
+                {
+                    //bg.setVisible(false);
+                    //bt.setVisible(false);
+                   if(allow == true){
+                    bt.setEnabled(true);
+                    setPhase(GamePhase.PHASE2);
+                   }
                 }
             });
              
        add(bt);
+       add(bt2);
        
        /*
         if(state == GameState){
@@ -76,5 +119,50 @@ add(bg);
         JButton g = new JButton("asd");
         add(g);
         g.setBounds(100,100,100,100);
+                   g.addActionListener(new ActionListener(){
+                @Override
+                public void actionPerformed(ActionEvent e)
+                {
+                    //bg.setVisible(false);
+                    //bt.setVisible(false);
+                   
+                    change();
+                    Toinen();
+                }
+            });
+       
+        
     }
+    
+        private void Toinen(){
+            
+        JButton g = new JButton("");
+        add(g);
+        g.setBounds(300,100,100,100);
+        if(this.phase == GamePhase.PHASE2){
+                   g.addActionListener(new ActionListener(){
+                @Override
+                public void actionPerformed(ActionEvent e)
+                {
+                 JFrame sd = new JFrame();
+                 sd.setVisible(true);
+                 sd.setSize(200,200);
+                 sd.setLocation(400,400);
+                 
+                }
+            });
+       
+            }else {getPhase();}
+    }
+    
+    private void change(){
+        if(allow == true){
+            allow = false;
+        }else{
+            allow = true;
+            
+        }
+    }
+   
+    
 }
