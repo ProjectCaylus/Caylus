@@ -34,6 +34,7 @@ public class Caylus {
     private Thread thread;
     private Board board;
     private Menu menu;
+    private Window game;
     
      
     public Caylus(){
@@ -42,9 +43,8 @@ public class Caylus {
        menu = new Menu();
 
         
-       Window game = new Window(this);
+       game = new Window(this);
        
-       game.add(board);
        game.add(menu);
        game.setSize(1920,1080);
        game.setLocationRelativeTo(null);
@@ -98,8 +98,12 @@ public class Caylus {
         while(state == GameState.MENU){
             menu.setVisible(true);
                 if(menu.isDone() == true){
+                     menu.setVisible(false);
                     setState(GameState.PLAY);
-                    menu.setVisible(false);
+                    game.remove(menu);
+                    game.add(board);
+                    game.revalidate();
+                   
                     
                 }
             }
