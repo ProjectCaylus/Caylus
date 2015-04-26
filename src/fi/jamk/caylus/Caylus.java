@@ -1,5 +1,5 @@
 package fi.jamk.caylus;
-import java.awt.CardLayout;
+import java.util.ArrayList;
 /* 
 
 MORO REISCA WITTU
@@ -35,8 +35,14 @@ public class Caylus {
     private Board board;
     private Menu menu;
     private Window game;
+    private ArrayList<Player> players = new ArrayList<Player>();
+
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
     
      
+    
     public Caylus(){
        //CaylusWindow game = new CaylusWindow();
        board = new Board();
@@ -62,7 +68,7 @@ public class Caylus {
         thread = new Thread() {
         @Override
         public void run(){
-        gameLoop();
+        tickFps();
     }
     };
         thread.start();
@@ -70,7 +76,9 @@ public class Caylus {
         Thread thread2 = new Thread(){
             @Override
             public void run(){
-                looping();
+                menuLoop();
+                creatingPlayers();
+                gameLoop();
             }
         };
         thread2.start();
@@ -90,15 +98,67 @@ public class Caylus {
     // Made so fps is max 60
     
     private void gameLoop(){
-        tickFps();
+        while(state == GameState.PLAY){
+            createPlayerResInfo(players.size());
+            board.createPlayerInfos(players.size());
+            }
 
     }
     
-    private void looping(){
+    private void phaseOne(){
+        for(int i = 0; i < players.size(); i++){
+            while(players.get(i).getMoney() > board.getRequiredMoney()) {
+                
+            
+        
+            }
+        }
+    }
+    
+    
+    // Creating new players according to the choice of the player
+   private void creatingPlayers(){ 
+     for(int i = 0; i < menu.getPlayerAmount(); i++) {
+            Player p = new Player();
+            players.add(i, p);
+        }
+    }
+   
+       public void createPlayerResInfo(int i){
+        
+        switch(i){
+            case 1:
+            case 2:
+                board.setPlayer1Res(players.get(0).resourcesInfo());
+                board.setPlayer2Res(players.get(1).resourcesInfo());
+           break;
+            case 3:
+                board.setPlayer1Res(players.get(0).resourcesInfo());
+                board.setPlayer2Res(players.get(1).resourcesInfo());
+                board.setPlayer3Res(players.get(2).resourcesInfo());                
+                break;
+            case 4:
+                board.setPlayer1Res(players.get(0).resourcesInfo());
+                board.setPlayer2Res(players.get(1).resourcesInfo());
+                board.setPlayer3Res(players.get(2).resourcesInfo());
+                board.setPlayer4Res(players.get(3).resourcesInfo());                
+                break;
+            case 5:
+                board.setPlayer1Res(players.get(0).resourcesInfo());
+                board.setPlayer2Res(players.get(1).resourcesInfo());
+                board.setPlayer3Res(players.get(2).resourcesInfo());
+                board.setPlayer4Res(players.get(3).resourcesInfo());
+                board.setPlayer5Res(players.get(4).resourcesInfo());
+                break;
+            }
+        
+    }
+    
+    private void menuLoop(){
         while(state == GameState.MENU){
             menu.setVisible(true);
                 if(menu.isDone() == true){
-                     menu.setVisible(false);
+                    menu.setVisible(false);
                     setState(GameState.PLAY);
                     game.remove(menu);
                     game.add(board);
@@ -106,9 +166,6 @@ public class Caylus {
                    
                     
                 }
-            }
-        while(state == GameState.PLAY){
-                board.setVisible(true);
             }
     }
     

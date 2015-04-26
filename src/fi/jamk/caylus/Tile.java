@@ -27,6 +27,13 @@ public class Tile extends JButton {
     ImageIcon apina = new ImageIcon(getClass().getResource("/images/apina.jpg"));
     ImageIcon jeps = new ImageIcon(getClass().getResource("/images/eihuono.jpg"));
     ImageIcon fill = new ImageIcon(getClass().getResource("/images/fill.png"));
+    
+    private ImageIcon randwood = new ImageIcon(getClass().getResource(("/images/buildings/randwood.jpg")));
+    private ImageIcon randfarm = new ImageIcon(getClass().getResource(("/images/buildings/randfarm.jpg")));
+    private ImageIcon randtrader = new ImageIcon(getClass().getResource(("/images/buildings/randtrader.jpg")));
+    private ImageIcon randpermit = new ImageIcon(getClass().getResource(("/images/buildings/randpermit.jpg")));
+    private ImageIcon randforest = new ImageIcon(getClass().getResource(("/images/buildings/randforest.jpg")));
+    private ImageIcon randstone = new ImageIcon(getClass().getResource(("/images/buildings/randstone.jpg")));
 
     private ImageIcon img;
     private Building building;

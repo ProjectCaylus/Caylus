@@ -151,12 +151,15 @@ public class Menu extends JPanel{
         }
         else if (src == three){
             setPlayerAmount(threeplayers);
+            setDone(true);
         }
         else if (src == four){
             setPlayerAmount(fourplayers);
+            setDone(true);
         }
         else if (src == five){
             setPlayerAmount(fiveplayers);
+            setDone(true);
         }
       }
     }
