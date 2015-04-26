@@ -16,7 +16,7 @@ public class Building extends Resources {
         cost = new Resources(0,0,0,0,0,0,0,0);
         own = new Resources(0,0,0,0,0,0,0,0);
     }
-    /*
+    
     public Resources defTrade(String opt){
         this.cost.addMoney(2);
         switch(opt){
@@ -41,7 +41,7 @@ public class Building extends Resources {
         return this.reward;
         
     }
-    */
+    
     public Resources woodfoodfarmopt(String opt){
         switch(opt){
             

@@ -1,15 +1,10 @@
 package fi.jamk.caylus;
-import fi.jamk.caylus.buildings.*;
+import java.awt.CardLayout;
 /* 
 
 MORO REISCA WITTU
 OSMO... OSMO HEI! NO WITTU! WITTUSAATANA
 */
-
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.image.BufferStrategy;
 
 
 /** 
@@ -17,22 +12,41 @@ import java.awt.image.BufferStrategy;
  * @author Mythe 
  */ 
 
-public class Caylus extends Canvas {
+public class Caylus {
   
     public final int WIDTH = 1920, HEIGHT = 1080;
+    
+    static enum GameState {
+        MENU, PLAY
+    }
+    
+    public GameState state = GameState.MENU;
+    
+    public void setState(GameState sd) {
+        this.state = sd;
+    }
+    
+    public GameState getState(){
+        return state;
+    }
     
     private boolean running = false;
     private Thread thread;
     private Board board;
+    private Menu menu;
+    
      
     public Caylus(){
        //CaylusWindow game = new CaylusWindow();
-       Window game = new Window(this);
        board = new Board();
-       game.add(board);
-       
-       game.setSize(1920,1080);
+       menu = new Menu();
+
         
+       Window game = new Window(this);
+       
+       game.add(board);
+       game.add(menu);
+       game.setSize(1920,1080);
        game.setLocationRelativeTo(null);
        game.setResizable(false);
        game.setVisible(true);
@@ -52,6 +66,14 @@ public class Caylus extends Canvas {
     }
     };
         thread.start();
+        
+        Thread thread2 = new Thread(){
+            @Override
+            public void run(){
+                looping();
+            }
+        };
+        thread2.start();
     }
     
     public synchronized void stop(){
@@ -69,8 +91,21 @@ public class Caylus extends Canvas {
     
     private void gameLoop(){
         tickFps();
-          
-        
+
+    }
+    
+    private void looping(){
+        while(state == GameState.MENU){
+            menu.setVisible(true);
+                if(menu.isDone() == true){
+                    setState(GameState.PLAY);
+                    menu.setVisible(false);
+                    
+                }
+            }
+        while(state == GameState.PLAY){
+                board.setVisible(true);
+            }
     }
     
     private void tickFps(){ 
@@ -93,9 +128,6 @@ public class Caylus extends Canvas {
                 }
                // render();
                 frames++;
-                 board.setPhase(Board.GamePhase.PHASE2);
-           board.repaint();
-           board.revalidate();
                 
                 
                 if(System.currentTimeMillis() - timer > 1000){
@@ -110,30 +142,6 @@ public class Caylus extends Canvas {
     }
     
     public void tick(){
-    }
-    
-    public void render(){
-        
-        BufferStrategy bs = this.getBufferStrategy();
-        
-        if(bs == null){
-            
-            this.createBufferStrategy(2);
-            return;
-             }
-        
-        Graphics g = bs.getDrawGraphics();
-        // Drawing starts
-        
-       g.setColor(Color.black);
-       g.fillRect(0, 0, getWidth(), getHeight());
-       
-        // Drawing ends
-        
-        g.dispose();
-        bs.show();
-     
-        
     }
     
     public static void main (String args[]){
